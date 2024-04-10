@@ -1,1 +1,43 @@
-<p>productlist works!</p>
+<header>
+
+    <div class="title-container">
+        <h1>{{ title }}</h1>
+    </div>
+    <div>
+        <button routerLink="/studentlist">Student List</button>
+        <button routerLink="/productlist">Product List</button>
+    </div>
+
+</header>
+
+<main>
+    <table class="main-table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Sales</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{ product.name }}</td>
+                <td>
+                    <table class="nested-table">
+                        <tr>
+                            <th>January</th>
+                            <th>February</th>
+                            <th>March</th>
+                        </tr>
+                        <tr>
+                            <td>{{ product.sales.January }}</td>
+                            <td>{{ product.sales.February }}</td>
+                            <td>{{ product.sales.March }}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>Total Value</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
